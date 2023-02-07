@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 using System.Globalization;
+using System.Text;
 using System.Threading.Channels;
 using System.Xml.Schema;
 
@@ -8,11 +9,18 @@ namespace CSarpCourse1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void StringBuilder()
         {
-            string textData = File.ReadAllText("C:\\Users\\gioch\\OneDrive\\Desktop\\123123.txt");
-            Console.WriteLine(textData);
+            StringBuilder sb = new StringBuilder();
+            sb.Append("My ");
+            sb.Append("name ");
+            sb.Append("is "); 
+            sb.Append("John");
+            sb.AppendLine("!");
+            sb.AppendLine("Hello!");
 
+            string str = sb.ToString();
+            Console.WriteLine(sb);
         }
 
         static void StringModification() 
