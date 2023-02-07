@@ -9,6 +9,51 @@ namespace CSarpCourse1
 {
     class Program
     {
+        static void StringFormat()
+        {
+            string name = "John";
+            int age = 30;
+            string str1 = string.Format("My name is {0} and I'm  {1}", name, age);
+            string str22 = "My name" + "is " + name + "and I'm " + age;
+            string str2 = $"My name is {name} and I'm  {age}";
+
+            string str3 = "My name is \n John";
+            string str4 = "I'm \t30";
+
+            str3 = $"My name is {Environment.NewLine} John";
+
+            string str5 = "I'm John and i'm a \"good\" programmer";
+            string str6 = "C:\\tmp\\test.txt";
+            str6 = @"C:\tmp\test.txt";
+
+            int answer = 42;
+            string result = string.Format("{0:d}", answer);
+            string result2 = string.Format("{0:d4}", answer);
+
+
+            double ans = 42.23;
+            result = string.Format("{0:f}", ans);
+            result2 = string.Format("{0:f4}", ans);
+
+            Console.OutputEncoding = Encoding.UTF8;
+
+            double money = 12.8;
+            result = string.Format("{0:C}", money);
+            result2 = string.Format("{0:C4}", money);
+
+            // Console.WriteLine(money.ToString("C4"));
+
+            result = $"{money:C4}";
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US"); // izmeniaet valiutu drugoi strani
+
+            Console.WriteLine(result2);
+
+
+             
+
+        }
+
         static void StringBuilder()
         {
             StringBuilder sb = new StringBuilder();
