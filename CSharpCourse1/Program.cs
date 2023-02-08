@@ -9,6 +9,38 @@ namespace CSarpCourse1
 {
     class Program
     {
+
+        static void Main(string[] args)
+        {
+
+        }
+
+        static void ConsoleBasics()
+        {
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("Hi, please tell me your name");
+
+            string name = Console.ReadLine();
+            string sentence = $"Your name is {name}";
+            Console.WriteLine(sentence);
+
+            Console.WriteLine("Hi, please tell me your age.");
+            string input = Console.ReadLine();
+            int age = int.Parse(input);
+
+            string sentence1 = $"Your age is {age}";
+            Console.WriteLine(sentence1);
+
+            //Console.Clear(); // For Clear Console
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+
+        }
+
         static void ComparingStrings()
         {
             string str1 = "abcde";
@@ -20,8 +52,8 @@ namespace CSarpCourse1
             Console.WriteLine(areEqual);
 
 
-            string str11 = "Strasse"; // nemeckom iazike
-            string str12 = "Straße"; // nemeckom iazike
+            string str11 = "Strasse"; // German
+            string str12 = "Straße";
 
             bool areEqual2 = string.Equals(str11, str12, StringComparison.Ordinal);
             Console.WriteLine(areEqual2);
