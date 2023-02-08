@@ -9,6 +9,29 @@ namespace CSarpCourse1
 {
     class Program
     {
+        static void ComparingStrings()
+        {
+            string str1 = "abcde";
+            string str2 = "abcde";
+
+            bool areEqual = str1 == str2;
+
+            areEqual = string.Equals(str1, str2, StringComparison.Ordinal);
+            Console.WriteLine(areEqual);
+
+
+            string str11 = "Strasse"; // nemeckom iazike
+            string str12 = "Straße"; // nemeckom iazike
+
+            bool areEqual2 = string.Equals(str11, str12, StringComparison.Ordinal);
+            Console.WriteLine(areEqual2);
+            areEqual2 = string.Equals(str11, str12, StringComparison.InvariantCulture);
+            Console.WriteLine(areEqual2);
+            areEqual2 = string.Equals(str11, str12, StringComparison.CurrentCulture);
+            Console.WriteLine(areEqual2);
+
+        }
+
         static void StringFormat()
         {
             string name = "John";
