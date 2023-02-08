@@ -9,9 +9,41 @@ namespace CSarpCourse1
 {
     class Program
     {
-
         static void Main(string[] args)
         {
+            Console.WriteLine("11");
+        }
+
+        static void CastingAndParsing()
+        {
+            byte b = 3; // 0000 0011
+            int i = b; // 0000 0000 0000 0000 0000 0000 0000 0011
+            long l = i; // 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0011
+
+            float f = i; // 3.0
+
+            Console.WriteLine(i);
+
+            b = (byte)i;
+            Console.WriteLine(b);
+
+            i = (int)f;
+            Console.WriteLine(i);
+
+            f = 3.6f;
+            i = (int)f;
+            Console.WriteLine(i);
+
+            string str = "1";
+            i = int.Parse(str);
+            Console.WriteLine($"Parsed i={i}");
+
+            int x = 5;
+            int result = x / 2;
+            Console.WriteLine(result);
+
+            double result2 = (double)x / 2;
+            Console.WriteLine(result2);
 
         }
 
