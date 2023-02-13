@@ -10,6 +10,32 @@ namespace CSarpCourse1
     class Program
     {
 
+        static void areaOfATriangle() {
+
+            Console.WriteLine("Please enter the lengths of the three sides of the triangle: ");
+
+            Console.Write("side 'a': ");
+
+            double a = double.Parse(Console.ReadLine());
+
+            Console.Write("side 'b': ");
+
+            double b = double.Parse(Console.ReadLine());
+
+            Console.Write("side 'c': ");
+
+            double c = double.Parse(Console.ReadLine());
+
+            double p = (a + b + c) / 2;
+
+            double S = Math.Sqrt(p*(p - a)*(p - b)*(p - c));
+
+            Console.WriteLine($"Area of a triangle: {Math.Round(S, 2)}");
+
+
+
+        }
+
         static void task19() {
 
             /*
