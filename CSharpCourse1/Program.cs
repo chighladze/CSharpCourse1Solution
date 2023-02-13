@@ -10,6 +10,47 @@ namespace CSarpCourse1
     class Program
     {
 
+        static void task19() {
+
+            /*
+             // task1
+
+            Console.Write("Please write 'Hello' and tap to enter: ");
+            string user = Console.ReadLine();
+            Console.Write("Thanks!");
+            */
+
+
+            /*
+             // task2
+
+            Console.Write("Please enter first integer: ");
+            string firstInt = Console.ReadLine();
+            int n1 = int.Parse(firstInt);
+            Console.Write("Please enter second integer: ");
+            string secondInt = Console.ReadLine();
+            int n2 = int.Parse(secondInt);
+            Console.WriteLine($"first integer: {firstInt} / second integer: {secondInt}");
+
+            int n;
+            n = n1;
+            n1 = n2;
+            n2 = n;
+
+            Console.WriteLine($"first integer: {n1} / second integer: {n2}");
+            */
+
+
+            Console.Write("Please enter integer: ");
+            string value = Console.ReadLine();
+            int number = int.Parse(value);
+
+            Console.WriteLine(value.Length);
+
+
+        }
+
+
         static void DateTimeType()
         {
             DateTime now = DateTime.Now;
