@@ -9,6 +9,26 @@ namespace CSarpCourse1
 {
     class Program
     {
+
+        static void DateTimeType()
+        {
+            DateTime now = DateTime.Now;
+
+            Console.WriteLine(now);
+            Console.WriteLine($"It's {now.Date}, {now.Hour}:{now.Minute}");
+
+            DateTime dt = new DateTime(2016, 2, 28); // defailt 00:00:00
+            DateTime newDt = dt.AddDays(1);
+            Console.WriteLine(newDt);
+            Console.WriteLine(now.Subtract(newDt).ToString());
+            TimeSpan ts = now - dt;
+            Console.WriteLine(ts.ToString());
+
+            ts = now.Subtract(dt);
+            Console.WriteLine(ts.Days.ToString());
+
+        }
+
         static void IntToArrays()
         {
             int[] a1;
