@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCourse1", "CSharpCourse1\CSharpCourse1.csproj", "{5783CE24-B707-429B-8C0B-419777588474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpCourse1", "CSharpCourse1\CSharpCourse1.csproj", "{5783CE24-B707-429B-8C0B-419777588474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BControlFlow", "BControlFlow\BControlFlow.csproj", "{17B3F372-ED5E-408D-8C81-37F9FF4E0A61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5783CE24-B707-429B-8C0B-419777588474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5783CE24-B707-429B-8C0B-419777588474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5783CE24-B707-429B-8C0B-419777588474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B3F372-ED5E-408D-8C81-37F9FF4E0A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B3F372-ED5E-408D-8C81-37F9FF4E0A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B3F372-ED5E-408D-8C81-37F9FF4E0A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B3F372-ED5E-408D-8C81-37F9FF4E0A61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,37 @@ namespace CSarpCourse1
     class Program
     {
 
-        static void areaOfATriangle() {
+        static void HomeWork03()
+        {
+            Console.Write("Please enter your name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Please enter your surname: ");
+            string surname = Console.ReadLine();
+
+            Console.Write("Please enter your age: ");
+            int age = int.Parse(Console.ReadLine());
+
+            Console.Write("Please enter your Weight(kg): ");
+            double weight = double.Parse(Console.ReadLine());
+
+            Console.Write("Please enter your Height(m): ");
+            double height = double.Parse(Console.ReadLine());
+
+
+            double bmi = weight / (height * height);
+
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("<< Your profile >>");
+            Console.WriteLine($"Full Name: {name} {surname}");
+            Console.WriteLine($"Age: {age}");
+            Console.WriteLine($"Weight: {weight}");
+            Console.WriteLine($"Height: {height}");
+            Console.WriteLine($"Body Mass Index: {Math.Round(bmi, 2)}");
+
+        }
+
+        static void HomeWork02() {
 
             Console.WriteLine("Please enter the lengths of the three sides of the triangle: ");
 
@@ -36,7 +66,7 @@ namespace CSarpCourse1
 
         }
 
-        static void task19() {
+        static void HomeWork01() {
 
             /*
              // task1
