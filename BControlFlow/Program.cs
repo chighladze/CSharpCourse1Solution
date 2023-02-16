@@ -4,6 +4,28 @@ namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
+
+        static void HomeWorkGetMax()
+        {
+            Console.Write("Please enter first digit: ");
+            double firstDigit = double.Parse(Console.ReadLine());
+
+            Console.Write("Please enter second digit: ");
+            double secondDigit = double.Parse(Console.ReadLine());
+
+
+            if (firstDigit > secondDigit) {
+                Console.WriteLine($"First digit:{firstDigit} is greaten then Second digit:{secondDigit} ");
+            }
+            else if (firstDigit < secondDigit)
+            {
+                Console.WriteLine($"First digit:{firstDigit} is leese then Second digit:{secondDigit} ");
+            }
+            else {
+                Console.WriteLine($"First digit:{firstDigit} is equal to Second digit:{secondDigit} ");
+            }
+        }
+
         static void BMI()
         {
 
