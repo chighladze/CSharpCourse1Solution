@@ -10,7 +10,7 @@ namespace CSarpCourse1
     class Program
     {
 
-        static void HomeWork03()
+        static void Main(string[] args)
         {
             Console.Write("Please enter your name: ");
             string name = Console.ReadLine();
@@ -26,7 +26,6 @@ namespace CSarpCourse1
 
             Console.Write("Please enter your Height(m): ");
             double height = double.Parse(Console.ReadLine());
-
 
             double bmi = weight / (height * height);
 
