@@ -1,9 +1,47 @@
 ﻿using System;
+using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
+        static void Main(string[] args) 
+        {
+
+        }
+
+        static void ForForeach()
+        {
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+            Console.WriteLine();
+            for (int i = numbers.Length - 1; i >= 0; i-- )
+            {
+                Console.Write(numbers[i] + " ");
+            }
+            Console.WriteLine();
+            for (int j = 0; j < numbers.Length; j++)
+            {
+                if (numbers[j] % 2 == 0)
+                {
+                    Console.Write(numbers[j] + " ");
+                }
+            }
+            Console.WriteLine();
+            foreach (int var in numbers)
+            {
+                Console.Write(var + " ");
+            }
+
+
+
+
+        }
 
         static void HomeWorkGetMax()
         {
