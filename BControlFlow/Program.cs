@@ -6,8 +6,39 @@ namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
+
+        }
+
+        static void BreakContinue()
+        {
+            int[] numbers = { 0, 3, 2, 1, 5, 4, 6, 7, 8, 9 };
+            char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine($"Numbers={numbers[i]}");
+
+                for (int j = 0; j < letters.Length; j++) 
+                {
+                    if(numbers[i] == j)
+                    {
+                        break;
+                    }
+                    Console.Write($"{letters[j]}");
+                }
+                Console.WriteLine();
+            }
+
+
+
+
+
+
+            //int[] numbers = { 1, -2, 4, -7, 5, 3, 2, -1, -3, 2, 7, -1, -3, 1, 7 };
+
 
         }
 
@@ -189,5 +220,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             Console.WriteLine(description);
         }
+
     }
 }
