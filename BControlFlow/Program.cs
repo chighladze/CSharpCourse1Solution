@@ -10,6 +10,43 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
 
         }
+
+        static void WhileDoWhile()
+        {
+            DateTime startTime = DateTime.Now;
+
+            int age = 20;
+
+            while (age < 18)
+            {
+                Console.WriteLine("What is your age?");
+                age = int.Parse(Console.ReadLine());
+            }
+
+             age = 30;
+
+            do 
+            {
+                Console.WriteLine("Do\\While");
+                Console.WriteLine("What is your age?");
+                age = int.Parse(Console.ReadLine());
+            } 
+            while (age < 18);
+
+            int[] numbers = { 1, 2, 3, 4, 5 };
+            int i = 0;
+            while (i < numbers.Length)
+            {
+                Console.WriteLine(numbers[i]);
+                i++;
+            }
+            Console.WriteLine("Good!");
+            DateTime endTime = DateTime.Now;
+            Console.WriteLine($"time: {endTime - startTime}");
+
+
+        }
+
         static void NestedFor() 
         {
             int[] numbers = { 1, -2, 4, -7, 5, 3, 2, -1, -3, 2, 7, -1, -3, 1, 7 };
