@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
@@ -6,9 +7,73 @@ namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
+
+        }
+
+        static void SwithCase()
+        {
+            int month = int.Parse(Console.ReadLine());
+
+            string season = string.Empty;
+            switch (month)
+            {
+                case 1:
+                case 2:
+                case 12:
+                    season = "Winter";
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    season = "Spring";
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    season = "Summer";
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    season = "Autum";
+                    break;
+                default:
+                    throw new ArgumentException("Exception");
+            }
+
+
+            int weddingYears = int.Parse(Console.ReadLine());
+
+            string name = string.Empty;
+
+            switch(weddingYears)
+            {
+                case 5:
+                    name = "11111111111";
+                    break;
+                case 10:
+                    name = "22222222222";
+                    break;
+                case 15:
+                    name = "33333333333";
+                    break;
+                case 20:
+                    name = "44444444444";
+                    break;
+                case 25:
+                    name = "55555555555";
+                    break;
+                case 30:
+                    name = "66666666666";
+                    break;
+                default:
+                    name = "Dont know";
+                    break;
+
+
+            }
 
         }
 
