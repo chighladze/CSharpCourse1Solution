@@ -2,6 +2,7 @@
 using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using MySql.Data.MySqlClient;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -10,6 +11,32 @@ namespace MyApp // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
 
+        }
+
+
+
+
+        static void DebugingDemoExample()
+        {
+            Console.WriteLine("Let's calculate the square of a triagle.");
+            Console.WriteLine("Enter the length of side AB:");
+            double ab = GetDouble();
+
+            Console.WriteLine("Enter the length of side BC:");
+            double bc = GetDouble();
+
+            Console.WriteLine("Enter the length of side AC:");
+            double ac = GetDouble();
+
+            double p = (ab + bc + ac) / 2;
+
+            double square = Math.Sqrt(p * (p - ab) * (p - bc) * (p - ac));
+            Console.WriteLine($"Square of the triagle equals {square}");
+        }
+
+        static double GetDouble()
+        {
+            return double.Parse(Console.ReadLine());
         }
 
         static void SwithCase()
