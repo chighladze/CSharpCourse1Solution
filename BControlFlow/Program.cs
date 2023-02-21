@@ -3,13 +3,40 @@ using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
+
+        }
+
+        static void ConnToDb()
+        {
+            string database = "jarvisdb";
+
+            string server = "localhost";
+            string username = "root";
+            string password = "root";
+
+            string constring = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
+            MySqlConnection conn = new MySqlConnection(constring);
+
+            conn.Open();
+            string query = "SELECT * FROM ns_accounts";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Console.WriteLine($"{reader["id"]} {reader["payID"]}");
+            }
+
 
         }
 
