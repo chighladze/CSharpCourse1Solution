@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
 using System.Globalization;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
+using Org.BouncyCastle.Asn1.Crmf;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -12,8 +15,48 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static void Main(string[] args)
         {
+            int[] numbers = new int[10];
+
+            Console.WriteLine("Please enter dont more than 10 positive integers, if you enter 0 or nothing you exit.");
+
+            int count = 1;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+
+                Console.Write($"enter val{count}: "); 
+
+                string v = Console.ReadLine();
+
+                if (v == "0" || v == "") 
+                {
+                    Console.WriteLine($"You are exit, entered {i} numbers.");
+                    break;
+                }
+                else
+                {
+                    numbers[i] = int.Parse(v);
+                }
+
+                count = count + 1;
+
+            }
+
+            int sum = 0;
+            for (int i = 0;i < numbers.Length; i++)
+            {
+                if (numbers[i] != 0)
+                {
+                    sum = sum + numbers[i];
+
+                }
+            }
+
+            Console.WriteLine((double)sum / (count - 1));
 
         }
+
+
 
         static void ConnToDb()
         {
