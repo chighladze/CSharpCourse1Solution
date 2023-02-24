@@ -1,12 +1,4 @@
-﻿using System;
-using System.Diagnostics.Contracts;
-using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
-using Org.BouncyCastle.Asn1.Crmf;
+﻿using MySql.Data.MySqlClient;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -15,7 +7,31 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static void Main(string[] args)
         {
-            SumOfInts();
+            FactorialOfNumber();
+        }
+
+        static void FactorialOfNumber()
+        {
+            Console.Write("Enter the number whose factorial you want to calculate: ");
+            int num = int.Parse(Console.ReadLine());
+
+            int[] FactorialMassive = new int[num];
+
+            for (int i = 0; i < FactorialMassive.Length; i++)
+            {
+                FactorialMassive[i] = num;
+                num--;
+            }
+
+            int factorial = FactorialMassive[0];
+
+            for (int i = 1; i < FactorialMassive.Length; i++)
+            {
+                factorial = factorial * FactorialMassive[i];
+            }
+
+            Console.WriteLine(factorial);
+
         }
 
         static void SumOfInts()
@@ -29,11 +45,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             for (int i = 0; i < numbers.Length; i++)
             {
 
-                Console.Write($"enter val{count}: "); 
+                Console.Write($"enter val{count}: ");
 
                 string v = Console.ReadLine();
 
-                if (v == "0" || v == "") 
+                if (v == "0" || v == "")
                 {
                     Console.WriteLine($"You are exit, entered {i} numbers.");
                     break;
@@ -63,8 +79,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         }
 
-
-
         static void ConnToDb()
         {
             string database = "jarvisdb";
@@ -89,9 +103,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
         }
-
-
-
 
         static void DebugingDemoExample()
         {
@@ -152,7 +163,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             string name = string.Empty;
 
-            switch(weddingYears)
+            switch (weddingYears)
             {
                 case 5:
                     name = "11111111111";
@@ -190,9 +201,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
             {
                 Console.WriteLine($"Numbers={numbers[i]}");
 
-                for (int j = 0; j < letters.Length; j++) 
+                for (int j = 0; j < letters.Length; j++)
                 {
-                    if(numbers[i] == j)
+                    if (numbers[i] == j)
                     {
                         break;
                     }
@@ -223,14 +234,14 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 age = int.Parse(Console.ReadLine());
             }
 
-             age = 30;
+            age = 30;
 
-            do 
+            do
             {
                 Console.WriteLine("Do\\While");
                 Console.WriteLine("What is your age?");
                 age = int.Parse(Console.ReadLine());
-            } 
+            }
             while (age < 18);
 
             int[] numbers = { 1, 2, 3, 4, 5 };
@@ -247,13 +258,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         }
 
-        static void NestedFor() 
+        static void NestedFor()
         {
             int[] numbers = { 1, -2, 4, -7, 5, 3, 2, -1, -3, 2, 7, -1, -3, 1, 7 };
 
-            for (int i =0; i < numbers.Length - 2; i++)
+            for (int i = 0; i < numbers.Length - 2; i++)
             {
-                for (int j = i +1; j < numbers.Length - 1; j++)
+                for (int j = i + 1; j < numbers.Length - 1; j++)
                 {
                     for (int k = j + 1; k < numbers.Length; k++)
                     {
@@ -280,7 +291,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.Write(numbers[i] + " ");
             }
             Console.WriteLine();
-            for (int i = numbers.Length - 1; i >= 0; i-- )
+            for (int i = numbers.Length - 1; i >= 0; i--)
             {
                 Console.Write(numbers[i] + " ");
             }
@@ -312,14 +323,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
             double secondDigit = double.Parse(Console.ReadLine());
 
 
-            if (firstDigit > secondDigit) {
+            if (firstDigit > secondDigit)
+            {
                 Console.WriteLine($"First digit:{firstDigit} is greaten then Second digit:{secondDigit} ");
             }
             else if (firstDigit < secondDigit)
             {
                 Console.WriteLine($"First digit:{firstDigit} is leese then Second digit:{secondDigit} ");
             }
-            else {
+            else
+            {
                 Console.WriteLine($"First digit:{firstDigit} is equal to Second digit:{secondDigit} ");
             }
         }
@@ -343,12 +356,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             bool isTooLow = bodyMassIndex <= 18.5;
             bool isNormal = bodyMassIndex > 18.5 && bodyMassIndex < 25;
-            bool isAboveNormal = bodyMassIndex >= 25 && bodyMassIndex  <= 30;
+            bool isAboveNormal = bodyMassIndex >= 25 && bodyMassIndex <= 30;
             bool isTooFat = bodyMassIndex > 30;
 
             bool isFat = isAboveNormal || isTooFat;
 
-            if (isFat) 
+            if (isFat)
             {
                 Console.WriteLine("You'd better lose some weight");
             }
@@ -380,7 +393,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("You need to lose some weight");
             }
 
-            if(isFat || isTooFat)
+            if (isFat || isTooFat)
             {
                 Console.WriteLine("Anyway it's time to get on diet");
             }
