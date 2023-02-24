@@ -15,6 +15,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static void Main(string[] args)
         {
+            SumOfInts();
+        }
+
+        static void SumOfInts()
+        {
             int[] numbers = new int[10];
 
             Console.WriteLine("Please enter dont more than 10 positive integers, if you enter 0 or nothing you exit.");
@@ -43,16 +48,18 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
 
             int sum = 0;
-            for (int i = 0;i < numbers.Length; i++)
+            int c2 = 0;
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if (numbers[i] != 0)
+                if (numbers[i] % 3 == 0 && numbers[i] != 0)
                 {
                     sum = sum + numbers[i];
+                    c2 = c2 + 1;
 
                 }
             }
 
-            Console.WriteLine((double)sum / (count - 1));
+            Console.WriteLine((double)sum / (c2));
 
         }
 
