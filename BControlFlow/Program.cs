@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Math;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -7,7 +8,38 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static void Main(string[] args)
         {
-            FactorialOfNumber();
+            UserAuth();
+        }
+
+
+        static void UserAuth()
+        {
+            Console.WriteLine("Please enter the Login & Password");
+            Console.WriteLine();
+
+            for (int i = 0; i <= 3; i++)
+            {
+                Console.Write("login: ");
+                string username = Console.ReadLine();
+
+                Console.Write("pass: ");
+                string password = Console.ReadLine();
+
+                if (username == "johnsilver" && password == "qwerty")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Enter the System");
+                    break;
+                }
+                else if(username != "johnsilver" && password != "qwerty" && i == 3)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("The number of available tries have been exceeded");
+                    break;
+                }
+
+            }
+
         }
 
         static void FactorialOfNumber()
@@ -23,7 +55,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 num--;
             }
 
-            int factorial = FactorialMassive[0];
+            long factorial = FactorialMassive[0];
 
             for (int i = 1; i < FactorialMassive.Length; i++)
             {
