@@ -8,10 +8,58 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static void Main(string[] args)
         {
+            ListDemo();
+        }
+
+        static void ListDemo()
+        {
+            var inList = new List<int>() { 1, 4, 2, 7, 5, 9, 12 };
+            inList.Add(7);
+
+            int[] intArray = { 1,2,3};
+            inList.AddRange(intArray);
+
+            if (inList.Remove(1)) // first occurence
+            {
+                // do
+            }
+            else { }
+
+
+
+            inList.RemoveAt(0);
+
+            inList.Reverse();
+
+            bool contains = inList.Contains(3);
+
+            int min = inList.Min();
+            int max = inList.Max();
+
+            Console.WriteLine($"Min={min}. Max={max}");
+
+            int indexof = inList.IndexOf(2); // finde only first index
+            int lastIndexOf = inList.LastIndexOf(2); // finde only last index
+            Console.WriteLine($"IndexOf2={indexof}; lastIndexOf2={lastIndexOf}");
+
+            for (int i = 0;i< inList.Count; i++) 
+            {
+                Console.Write($"{inList[i]} ");
+            }
+            Console.WriteLine();
+
+            foreach (int item in inList)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+
+                
+
 
         }
 
-            static void ArrayType()
+        static void ArrayType()
         {
 
             int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -58,7 +106,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
         }
-
 
         static void UserAuth()
         {
