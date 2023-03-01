@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Math;
+using System.Diagnostics.SymbolStore;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -8,7 +9,79 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static void Main(string[] args)
         {
-            ListDemo();
+            Dictonary();
+        }
+
+        static void Dictonary()
+        {
+            var peolpe = new Dictionary<int, string>();
+            peolpe.Add(1, "John");
+            peolpe.Add(2, "Bob");
+            peolpe.Add(3, "Alice");
+
+            peolpe = new Dictionary<int, string>()
+            {
+                {1, "John" },
+                {2, "Bob" },
+                {3,  "Alice" },
+            };
+
+            string name = peolpe[1];
+            Console.WriteLine(name);
+
+            var keys = peolpe.Keys;
+            // Dictonary<int, string>.KeyCollection key = peolpe.Keys;
+            foreach (var item in keys)
+            {
+                
+                Console.WriteLine(item);
+                Console.WriteLine($"key: {item}; value={peolpe[item]}");
+
+            }
+
+            var values = peolpe.Values;
+            // Dictionary<int, string>.ValueCollection values = peolpe.Values;
+            foreach (var v in values)
+            {
+                Console.WriteLine($"{v}");
+            }
+
+
+            foreach (var i in peolpe)
+            {
+                Console.WriteLine($"Key: {i.Key} / Value: {i.Value}");
+            }
+            Console.WriteLine($"Count={peolpe.Count}");
+
+            bool containsKey = peolpe.ContainsKey(2);
+            bool containsValue = peolpe.ContainsValue("John");
+
+            Console.WriteLine($"Contains key: {containsKey}. Contains value: {containsValue}");
+
+            var p = peolpe.Remove(1);
+
+            if (peolpe.TryAdd(2, "Elias"))
+            {
+                Console.WriteLine("Added Succssfully");
+            }
+            else
+            {
+                Console.WriteLine($"Failed to add using key 2");
+            }
+
+            if(peolpe.TryGetValue(2, out string val))
+            {
+                Console.WriteLine($"Key 2, Val={val}");
+            }
+            else
+            {
+                Console.WriteLine("Filed to get");
+            }
+
+            peolpe.Clear();
+            
+             
+
         }
 
         static void ListDemo()
