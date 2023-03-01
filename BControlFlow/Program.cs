@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Math;
+using System.Diagnostics.SymbolStore;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -8,103 +9,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static void Main(string[] args)
         {
-            ListDemo();
-        }
-
-        static void ListDemo()
-        {
-            var inList = new List<int>() { 1, 4, 2, 7, 5, 9, 12 };
-            inList.Add(7);
-
-            int[] intArray = { 1,2,3};
-            inList.AddRange(intArray);
-
-            if (inList.Remove(1)) // first occurence
-            {
-                // do
-            }
-            else { }
-
-
-
-            inList.RemoveAt(0);
-
-            inList.Reverse();
-
-            bool contains = inList.Contains(3);
-
-            int min = inList.Min();
-            int max = inList.Max();
-
-            Console.WriteLine($"Min={min}. Max={max}");
-
-            int indexof = inList.IndexOf(2); // finde only first index
-            int lastIndexOf = inList.LastIndexOf(2); // finde only last index
-            Console.WriteLine($"IndexOf2={indexof}; lastIndexOf2={lastIndexOf}");
-
-            for (int i = 0;i< inList.Count; i++) 
-            {
-                Console.Write($"{inList[i]} ");
-            }
-            Console.WriteLine();
-
-            foreach (int item in inList)
-            {
-                Console.Write($"{item} ");
-            }
-            Console.WriteLine();
-
-                
-
-
-        }
-
-        static void ArrayType()
-        {
-
-            int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-            int index = Array.BinarySearch(numbers, 7);
-            Console.WriteLine(index);
-
-            int[] copy = new int[10];
-            Array.Copy(numbers, copy, numbers.Length);
-
-            int[] anotherCopy = new int[10];
-            copy.CopyTo(anotherCopy, 0);
-
-            Array.Reverse(copy);
-            foreach (int c in copy)
-            {
-                Console.WriteLine(c);
-            }
-            Console.WriteLine();
-
-            Array.Sort(copy);
-            foreach(int c in copy)
-            {
-                Console.WriteLine(c);
-            }
-            Console.WriteLine();
-
-
-            Array.Clear(copy, 0, copy.Length);
-
-
-            int[] a1;
-            a1 = new int[10];
-
-            int[] a2 = new int[10];
-            int[] a3 = new int[5] { 1, 3, -2, 5, 10 };
-            int[] a4 = { 1, 3, -2, 5, 10 };
-
-            Array myArray = new int[5];
-
-            Array myArray2 = Array.CreateInstance(typeof(int), 5);
-            myArray2.SetValue(12, 0);
-
-            Console.WriteLine(myArray2.GetValue(0));
-
-
         }
 
         static void UserAuth()
@@ -135,7 +39,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             }
 
-        }
+        }  
 
         static void FactorialOfNumber()
         {
