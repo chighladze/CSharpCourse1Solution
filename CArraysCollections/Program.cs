@@ -1,10 +1,55 @@
-﻿namespace MyApp // Note: actual namespace depends on the project name.
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace MyApp // Note: actual namespace depends on the project name.
 {
     class Program
     {
-
         static void Main(string[] args)
         {
+        }
+
+            static void StackQueue()
+        {
+            var queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+
+            Console.WriteLine($"Sould print out 1: {queue.Peek()}");
+
+            queue.Dequeue();
+
+            Console.WriteLine($"Sould print out 2: {queue.Peek()}");
+
+            Console.WriteLine("Iterate over the queue.");
+            foreach (var cur in queue) 
+            {
+                Console.WriteLine(cur);
+            }
+
+            Console.ReadLine();
+
+
+            var stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+
+            Console.WriteLine($"should print out 4: {stack.Peek()}");
+
+            stack.Pop();
+
+            Console.WriteLine($"should print out 3: {stack.Peek()}");
+
+            Console.WriteLine($"Iterate over the stack.");
+            foreach(var cur in stack)
+            {
+                Console.WriteLine(cur);
+            }
 
         }
 
