@@ -4,13 +4,21 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Channels;
 using System.Xml.Schema;
+using D_OOP;
 
 namespace CSarpCourse1
 {
     class Program
     {
-
         static void Main(string[] args)
+        {
+            Character c = new Character();
+            c.Hit(10);
+
+            Console.WriteLine(c.Health);
+        }
+
+        static void myFirstProg()
         {
             Console.Write("Please enter your name: ");
             string name = Console.ReadLine();
