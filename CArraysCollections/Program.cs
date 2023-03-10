@@ -7,11 +7,33 @@ namespace MyApp // Note: actual namespace depends on the project name.
     class Program
     {
         static void Main(string[] args)
-        { 
+        {
 
         }
 
-            static void MultidimArrays()
+        static void jaggedArray()
+        {
+            int[][] jaggedArray = new int[4][];
+            jaggedArray[0] = new int[1];
+            jaggedArray[1] = new int[3];
+            jaggedArray[2] = new int[2];
+            jaggedArray[3] = new int[4];
+
+
+            Console.WriteLine("Enter the number for a jagged array.");
+
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    string st = Console.ReadLine();
+                    jaggedArray[i][j] = int.Parse(st);
+
+                }
+            }
+        }
+
+        static void MultidimArrays()
         {
             int[,] r1 = new int[2,3] { { 1, 2, 3 }, {4, 5, 6 } };
             int[,] r2 = { { 1, 2, 3 }, { 4, 5, 6 } };
