@@ -14,7 +14,19 @@ namespace D_OOP
         //protected - oonly in the class and in its descendants
 
 
-        public int Health = 100;
+        private int health = 100;
+
+        public int Health
+        {
+            get
+            {
+                return health;
+            }
+            private set
+            {
+                health = value;
+            }
+        }
 
         public void Hit(int damage)
         {
