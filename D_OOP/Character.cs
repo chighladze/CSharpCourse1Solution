@@ -18,6 +18,10 @@ namespace D_OOP
 
         public void Hit(int damage)
         {
+            if (damage > Health)
+            {
+                damage = Health;
+            }
             Health -= damage;
         }
     }
