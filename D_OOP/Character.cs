@@ -8,25 +8,16 @@ namespace D_OOP
 {
     public class Character
     {
-        //public - anywhere
-        //internal - only in project
-        //private - default
-        //protected - oonly in the class and in its descendants
+        public int Health { get; private set; } = 100;
 
-
-        private int health = 100;
-
-        public int Health
-        {
-            get
-            {
-                return health;
-            }
-            private set
-            {
-                health = value;
-            }
+        /*public int GetHealth() 
+        { 
+            return health; 
         }
+        private void SetHealth(int value)
+        {
+            health = value;
+        }*/
 
         public void Hit(int damage)
         {

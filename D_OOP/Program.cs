@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Character c = new Character();
-            c.Hit(120);
+            c.Hit(99);
 
             Console.WriteLine(c.Health);
 
