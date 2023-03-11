@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Character c = new Character();
-            c.Hit(99);
-
-            Console.WriteLine(c.Health);
+            Calculator calc = new Calculator();
+            double square1 = calc.CalcTriangleSquare(10, 10, 10);
+            double square2 = calc.CalcTriangleSquare(10, 10);
+            Console.WriteLine($"Square1={square1}. Square2={square2}");
 
         }
     }

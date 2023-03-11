@@ -8,7 +8,7 @@ namespace D_OOP
 {
     public class Character
     {
-        public int Health { get; private set; } = 100;
+        public int Health { get; set; } = 100;
 
         /*public int GetHealth() 
         { 
