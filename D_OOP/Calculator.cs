@@ -23,5 +23,11 @@ namespace D_OOP
 
             return square;
         }
+
+        public double CalcTriangleSquare(double ab, double ac, int alpha)
+        {
+            double rads = alpha * Math.PI / 180;
+            return 0.5 * ab * ac * Math.Sin(rads);
+        }
     }
 }
