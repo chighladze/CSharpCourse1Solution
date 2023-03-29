@@ -8,6 +8,18 @@ namespace D_OOP
 {
     public class Calculator
     {
+        public bool TryDivide(double divisible, double divisor, out double result)
+        {
+            result = 0;
+            if (divisor == 0)
+            {
+                return false;
+            }
+            result = divisible / divisor;
+            return true;
+
+        }
+
         public double Average(int[] numbers)
         {
             double sum = 0;
@@ -29,8 +41,6 @@ namespace D_OOP
             }
             return sum / numbers.Length;
         }
-
-
 
         public double CalcTriangleSquare(double ab, double bc, double ac)
         {
