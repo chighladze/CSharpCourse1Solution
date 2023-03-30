@@ -7,15 +7,29 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            Character c1 = new Character();
-            Character c2 = new Character();
+            PointVal a; // same as PintVal a = new PointVal();
+            a.X = 3;
+            a.Y = 5;
 
-            Console.WriteLine($"c1.Speed={c1.PrintSpeed()}. c2.Speed={c2.PrintSpeed()}");
+            PointVal b = a;
+            b.X = 7;
+            b.Y = 10;
 
-            c1.IncreaseSpeed();
+            a.LogValues();
+            b.LogValues();
 
-            Console.WriteLine($"c1.Speed={c1.PrintSpeed()}. c2.Speed={c2.PrintSpeed()}");
+            Console.WriteLine("After struct");
 
+            PointRef c = new PointRef();
+            c.X = 3;
+            c.Y = 5;
+
+            PointRef d = c;
+            d.X = 7;
+            d.Y = 10;
+
+            c.LogValues();
+            d.LogValues();
         }
     }
 }
