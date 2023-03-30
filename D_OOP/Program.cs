@@ -9,6 +9,26 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
+            PointVal? pv = null;
+            if (pv.HasValue)
+            {
+                PointVal pv2 = pv.Value;
+                Console.WriteLine(pv.Value.X);
+                Console.WriteLine(pv2.X);
+            }
+            else
+            {
+                //
+            }
+
+            PointVal pv3 = pv.GetValueOrDefault();
+
+            PointRef c = null;
+            Console.WriteLine(c.X);
+        }
+
+        static void PassByRefDemo()
+        {
 
             int a = 1;
             int b = 2;
@@ -41,7 +61,6 @@ namespace D_OOP
             Console.WriteLine($"Swaped a={a}, b={b}");
 
         }
-
 
         static void AddNumbers(List<int> numbers)
         {
