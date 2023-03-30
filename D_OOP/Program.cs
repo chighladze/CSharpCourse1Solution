@@ -1,5 +1,7 @@
-﻿using System.Threading.Channels;
+﻿using System;
+using System.Threading.Channels;
 using Microsoft.VisualBasic;
+using System.Collections.Generic;
 
 namespace D_OOP
 {
@@ -7,29 +9,46 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            PointVal a; // same as PintVal a = new PointVal();
-            a.X = 3;
-            a.Y = 5;
 
-            PointVal b = a;
-            b.X = 7;
-            b.Y = 10;
+            int a = 1;
+            int b = 2;
 
-            a.LogValues();
-            b.LogValues();
+            Swap(ref a, ref b);
 
-            Console.WriteLine("After struct");
+            Console.WriteLine($"a={a}, b={b}");
 
-            PointRef c = new PointRef();
-            c.X = 3;
-            c.Y = 5;
+            Console.ReadLine();
 
-            PointRef d = c;
-            d.X = 7;
-            d.Y = 10;
 
-            c.LogValues();
-            d.LogValues();
+            var list = new List<int>();
+            AddNumbers(list);
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+
+        static void Swap(ref int a, ref int b)
+        {
+            Console.WriteLine($"Original a={a}, b={b}");
+
+            int tmp = a;
+            a = b;
+            b = tmp;
+
+            Console.WriteLine($"Swaped a={a}, b={b}");
+
+        }
+
+
+        static void AddNumbers(List<int> numbers)
+        {
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(3);
+
         }
     }
 }
