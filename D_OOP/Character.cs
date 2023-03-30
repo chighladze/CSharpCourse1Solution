@@ -8,16 +8,9 @@ namespace D_OOP
 {
     public class Character
     {
-        public int Health { get; set; } = 100;
+        private static int speed = 10;
 
-        /*public int GetHealth() 
-        { 
-            return health; 
-        }
-        private void SetHealth(int value)
-        {
-            health = value;
-        }*/
+        public int Health { get; set; } = 100;
 
         public void Hit(int damage)
         {
@@ -25,7 +18,20 @@ namespace D_OOP
             {
                 damage = Health;
             }
+
             Health -= damage;
         }
+
+
+        public int PrintSpeed()
+        {
+            return speed;
+        }
+
+        public void IncreaseSpeed()
+        {
+            speed += 10;
+        }
+
     }
 }
