@@ -1,13 +1,70 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Threading.Channels;
 using Microsoft.VisualBasic;
 using System.Collections.Generic;
+
 
 namespace D_OOP
 {
     class Program
     {
         static void Main(string[] args)
+        {
+
+        }
+
+
+        static void ValRefTypesDemo()
+        {
+
+            EvilStruct es1 = new EvilStruct();
+            es1.PointRef = new PointRef() {X = 1, Y = 2};
+            //es1.PointRef.X = 1;
+            //es1.PointRef.Y = 2;
+            EvilStruct es2 = es1;
+
+            Console.WriteLine($"es1.PointRef.X={es1.PointRef.X}, es1.PointRef.Y={es1.PointRef.Y}");
+            Console.WriteLine($"es2.PointRef.X={es2.PointRef.X}, es2.PointRef.Y={es2.PointRef.Y}");
+
+            es2.PointRef.X = 42;
+            es2.PointRef.Y = 45;
+
+
+            Console.WriteLine($"es1.PointRef.X={es1.PointRef.X}, es1.PointRef.Y={es1.PointRef.Y}");
+            Console.WriteLine($"es2.PointRef.X={es2.PointRef.X}, es2.PointRef.Y={es2.PointRef.Y}");
+
+            Console.WriteLine();
+
+            PointVal a;
+
+            a.X = 3;
+            a.Y = 5;
+
+            PointVal b = a;
+            b.X = 7;
+            b.Y = 10;
+
+            a.LogValues();
+            b.LogValues();
+
+            Console.WriteLine("After structs.");
+
+            PointRef c = new PointRef();
+            c.X = 3;
+            c.Y = 5;
+
+            PointRef d = c;
+            d.X = 7;
+            d.Y = 10;
+
+
+            c.LogValues();
+            d.LogValues();
+
+        }
+
+        static void NRE_NullableValTypesDemo()
         {
             PointVal? pv = null;
             if (pv.HasValue)

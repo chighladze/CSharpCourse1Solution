@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace D_OOP
 {
+
+    public struct EvilStruct
+    {
+        public int X;
+        public int Y;
+
+        public PointRef PointRef;
+
+    }
+
     public struct PointVal
     {
         public int X;
