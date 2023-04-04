@@ -11,6 +11,8 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
+            Character c = new Character("Elf");
+            Console.WriteLine(c.Race);
         }
 
         static void BoxingUnboxing()
