@@ -11,9 +11,45 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-
         }
 
+        static void BoxingUnboxing()
+        {
+            //int x = 1;
+            //object obj = x;
+
+            //int y = (int)obj;
+
+            double pi = 3.14;
+            object obj1 = pi;
+
+            int number = (int)obj1;
+            Console.WriteLine(number);
+        }
+
+        static void Do(object obj)
+        {
+            bool isPointRef = obj is PointRef;
+            if (isPointRef)
+            {
+                PointRef pr = (PointRef)obj;
+                Console.WriteLine(pr.X);
+            }
+            else
+            {
+                //do smth.
+            }
+
+            PointRef pr1 = obj as PointRef;
+            if (pr1 != null)
+            {
+                Console.WriteLine(pr1.X);
+            }
+            else
+            {
+                //do smth.
+            }
+        }
 
         static void ValRefTypesDemo()
         {
@@ -107,6 +143,13 @@ namespace D_OOP
 
         }
 
+        static void AddNumbers(List<int> numbers)
+        {
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(3);
+        }
+
         static void Swap(ref int a, ref int b)
         {
             Console.WriteLine($"Original a={a}, b={b}");
@@ -116,14 +159,6 @@ namespace D_OOP
             b = tmp;
 
             Console.WriteLine($"Swaped a={a}, b={b}");
-
-        }
-
-        static void AddNumbers(List<int> numbers)
-        {
-            numbers.Add(1);
-            numbers.Add(2);
-            numbers.Add(3);
 
         }
     }
