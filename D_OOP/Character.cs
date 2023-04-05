@@ -22,7 +22,7 @@ namespace D_OOP
     public class Character
     {
 
-        private static int speed = 10;
+        private readonly int speed = 10;
 
         public int Health { get; set; } = 100;
 
@@ -36,10 +36,11 @@ namespace D_OOP
             Armor = 30;
         }
 
-        public Character(string race, int armor)
+        public Character(string race, int armor, int speed)
         {
             Race = race;
             Armor = armor;
+            this.speed = speed;
         }
 
         public void Hit(int damage)
