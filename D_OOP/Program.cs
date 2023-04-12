@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Threading.Channels;
 using Microsoft.VisualBasic;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 
 
 namespace D_OOP
@@ -10,6 +11,23 @@ namespace D_OOP
     class Program
     {
         static void Main(string[] args)
+        {
+            //Shapes shape = new Shape();
+
+            Shapes[] shapes = new Shapes[2];
+            shapes[0] = new Triangle(10, 20, 30);
+            shapes[1] = new Rectangle(5, 10);
+
+            foreach (Shapes shape in shapes)
+            {
+                shape.Draw();
+                Console.WriteLine(shape.Perimeter());
+            }
+
+            Console.ReadLine();
+        }
+
+        static void MModelXTerminalain()
         {
             ModelXTerminal terminal = new ModelXTerminal("123");
 
