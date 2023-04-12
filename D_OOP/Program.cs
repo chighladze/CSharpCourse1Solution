@@ -11,8 +11,11 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            Character c = new Character("Elf");
-            Console.WriteLine(c.Race);
+            ModelXTerminal terminal = new ModelXTerminal("123");
+
+            terminal.Connect();
+
+            Console.ReadLine();
         }
 
         static void BoxingUnboxing()
@@ -57,7 +60,7 @@ namespace D_OOP
         {
 
             EvilStruct es1 = new EvilStruct();
-            es1.PointRef = new PointRef() {X = 1, Y = 2};
+            //es1.PointRef = new PointRef() {X = 1, Y = 2};
             //es1.PointRef.X = 1;
             //es1.PointRef.Y = 2;
             EvilStruct es2 = es1;

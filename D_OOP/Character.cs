@@ -60,7 +60,7 @@ namespace D_OOP
 
         public void IncreaseSpeed()
         {
-            speed += 10;
+            //speed += 10;
         }
 
     }
