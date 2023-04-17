@@ -26,22 +26,44 @@ namespace D_OOP
 
         public int Health { get; set; } = 100;
 
-        public string Race { get; private set; }
+        public Race Race { get; private set; }
 
         public int Armor { get; private set; }
 
-        public Character(string race)
+        public Character(Race race)
         {
             Race = race;
-            Armor = 30;
+            switch (race)
+            {
+                case Race.Elf:
+                    Armor = 30;
+                    break;
+                case Race.Ork:
+                    Armor = 40;
+                    break;
+                case Race.Terrain:
+                    Armor = 20;
+                    break;
+                default:
+                    throw new ArgumentException("Unknown race.");
+            }
+
         }
 
-        public Character(string race, int armor, int speed)
+        public Character(Race race, int armor)
         {
             Race = race;
             Armor = armor;
-            this.speed = speed;
         }
+
+
+
+        //public Character(string race, int armor, int speed)
+        //{
+        //    Race = race;
+        //    Armor = armor;
+        //    this.speed = speed;
+        //}
 
         public void Hit(int damage)
         {

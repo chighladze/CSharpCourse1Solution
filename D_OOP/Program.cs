@@ -14,6 +14,7 @@ namespace D_OOP
 
         static void Main(string[] args)
         {
+
         }
 
         static void ProblemOfRepresentative()
