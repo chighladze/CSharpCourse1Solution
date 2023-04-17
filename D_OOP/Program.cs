@@ -11,24 +11,20 @@ namespace D_OOP
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            //IBaseCollection collection = new BaseList(4);
-            //collection.Add(1);
+        }
 
-            //Shapes shape = new Shape();
+        static void ProblemOfRepresentative()
+        {
+            IShape recr = new Rect() { Height = 2, Width = 5 };
+            IShape square = new Square() { SideLength = 10 };
 
-            //Shapes[] shapes = new Shapes[2];
-            //shapes[0] = new Triangle(10, 20, 30);
-            //shapes[1] = new Rectangle(5, 10);
 
-            //foreach (Shapes shape in shapes)
-            //{
-            //    shape.Draw();
-            //    Console.WriteLine(shape.Perimeter());
-            //}
 
-            //Console.ReadLine();
+
+            Console.ReadLine();
         }
 
         static void MModelXTerminalain()

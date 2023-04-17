@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,17 @@ namespace D_OOP
         void Remove(object obj);
 
         //void Clear(); // you can't do that
+    }
+
+    public static class BaseCollectionExtension
+    {
+        public static void AddRange(this IBaseCollection collection, IEnumerable<object> objects)
+        {
+            foreach (var item in objects)
+            {
+                collection.Add(item);
+            }
+        }
     }
 
     //public abstract class IBaseCollection
