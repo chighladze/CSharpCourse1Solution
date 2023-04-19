@@ -14,7 +14,30 @@ namespace D_OOP
 
         static void Main(string[] args)
         {
+            var ms = new MyStack<int>();
+            ms.Push(1);
+            ms.Push(2);
+            ms.Push(3);
 
+            Console.WriteLine(ms.Peek());
+
+            ms.Pop();
+
+            Console.WriteLine(ms.Peek());
+
+            ms.Push(3);
+            ms.Push(4);
+            ms.Push(5);
+
+            Console.WriteLine(ms.Peek());
+
+            while(ms.Count != 0)
+            {
+                Console.WriteLine((int)ms.Peek());
+                ms.Pop();
+            }
+
+            Console.ReadLine();
         }
 
         static void ProblemOfRepresentative()
