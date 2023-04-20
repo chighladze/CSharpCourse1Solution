@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace D_OOP
 {
-    public class MyStack<T>
+    public class MyStack<T> : IEnumerable<T>
     {
         private T[] _items;
+        
 
         public int Count { get; private set; }
 
@@ -62,5 +65,63 @@ namespace D_OOP
             return _items[Count - 1];
         }
 
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new StackEnumerator<T>(_items, Count);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
+
+    public class StackEnumerator<T> : IEnumerator<T>
+    {
+        private readonly T[] array;
+        private readonly int count;
+        private int position = -1;
+
+        public StackEnumerator(T[] array, int count)
+        {
+            this.array = array;
+            this.count = count;
+
+            position = count;
+        }
+
+        private IEnumerator<T> enumeratorImplementation;
+        public bool MoveNext()
+        {
+            position--;
+            return position >= 0;
+        }
+
+        public void Reset()
+        {
+            position = count;
+        }
+
+        public T Current
+        {
+            get
+            {
+                return array[position];
+            }
+        }
+
+        object IEnumerator.Current
+        {
+            get
+            {
+                return Current;
+
+            }
+        }
+
+        public void Dispose()
+        {
+        }
+    }
+
 }

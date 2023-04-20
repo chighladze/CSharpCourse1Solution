@@ -15,9 +15,20 @@ namespace D_OOP
         static void Main(string[] args)
         {
             var ms = new MyStack<int>();
+
+
             ms.Push(1);
             ms.Push(2);
             ms.Push(3);
+
+
+
+            foreach (var item in ms)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadLine();
 
             Console.WriteLine(ms.Peek());
 
@@ -31,11 +42,7 @@ namespace D_OOP
 
             Console.WriteLine(ms.Peek());
 
-            while(ms.Count != 0)
-            {
-                Console.WriteLine((int)ms.Peek());
-                ms.Pop();
-            }
+
 
             Console.ReadLine();
         }
