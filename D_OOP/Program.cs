@@ -11,8 +11,12 @@ namespace D_OOP
 {
     class Program
     {
-
         static void Main(string[] args)
+        {
+            MyStack();
+        }
+
+        static void MyStack()
         {
             var ms = new MyStack<int>();
 
