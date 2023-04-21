@@ -2,6 +2,11 @@
 
 namespace E_Exceptions
 {
+    //custom exception type
+    public class CreditCardWithdrawException : Exception
+    {
+
+    }
     class Program
     {
         static void Main(string[] args)
