@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Xml;
 
 namespace E_Exceptions
 {
@@ -12,6 +13,36 @@ namespace E_Exceptions
     {
         static void Main(string[] args)
         {
+            //File.Copy("text.txt", "text_copy.txt", overwrite: true);
+
+            //File.Move("text_copy.txt", "text_copy_renamed.txt");
+
+            //File.Delete("text_copy.txt");
+
+            //if (File.Exists("text.txt"))
+            //{
+            //    Console.WriteLine("true");
+            //}
+
+            //File.Replace("text.txt", "text_new.txt", "text_backup.txt");
+
+            bool existsDir = Directory.Exists(@"C:\test");
+            if (existsDir)
+            {
+                var files = Directory.EnumerateFiles(@"C:\test", "*.txt", SearchOption.AllDirectories);
+                foreach (var i in files)
+                {
+                    Console.WriteLine(i);
+                }
+                //Console.WriteLine("Do somethings");
+            }
+            else
+            {
+                Console.WriteLine("none");
+            }
+
+            Path.GetExtension("");
+
         }
 
         static void FileDemo()

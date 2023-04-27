@@ -5,6 +5,8 @@ using Microsoft.VisualBasic;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
 using System.Security.Cryptography.X509Certificates;
+using D_OOP.Homeworks;
+using D_OOP.HomeWorks;
 
 
 namespace D_OOP
@@ -13,7 +15,12 @@ namespace D_OOP
     {
         static void Main(string[] args)
         {
-            MyStack();
+            GuessNumberGame game = new GuessNumberGame(guessingPlayer:GuessingPlayer.Machine);
+            game.Start();
+
+            Console.WriteLine();
+
+
         }
 
         static void MyStack()
