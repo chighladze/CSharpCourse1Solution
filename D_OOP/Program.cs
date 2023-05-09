@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Reflection.Metadata;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using D_OOP.Homeworks;
+using D_OOP.Homeworks.HangmanGame;
 using D_OOP.Homeworks.TicTacToeGame;
 
 
@@ -15,9 +15,69 @@ namespace D_OOP
 {
     class Program
     {
+        static void DumpString(string value)
+        {
+            foreach (char c in value)
+            {
+                Console.Write("{0:x4} ", (int)c);
+            }
+            Console.WriteLine();
+        }
+
+        static void Main(string[] args)
+        {
+            string str = Console.ReadLine();
+
+            DumpString(str);
+
+
+
+            //Console.OutputEncoding = Encoding.UTF8;
+            //string s = Console.ReadLine();
+            //while (s != "q")
+            //{
+            //    s = Console.ReadLine();
+            //    Console.OutputEncoding = Encoding.UTF8;
+            //    Console.WriteLine(s);
+
+            //}
+
+
+            //HangmanGame game = new HangmanGame();
+            //string word = game.GenerateWord();
+
+            //Console.WriteLine($"The word consists of {word.Length} letters");
+            //Console.WriteLine("Try to guess the word.");
+
+            //while (game.GameStatus == GameStatus.InProgress)
+            //{
+            //    Console.WriteLine("Pick a letter");
+            //    char c = Console.ReadLine().ToCharArray()[0];
+            //    Console.WriteLine(c);
+
+            //    string curState = game.GuessLetter(c);
+            //    Console.WriteLine(curState);
+
+            //    Console.WriteLine($"Remaining tries = {game.RemaningTries}");
+            //    Console.WriteLine($"Tried letters: {game.TriedLetters}");
+            //}
+
+            //if (game.GameStatus == GameStatus.Lost)
+            //{
+            //    Console.WriteLine("You're hanged");
+            //    Console.WriteLine($"The word was: {game.Word}");
+            //}
+            //else if (game.GameStatus == GameStatus.Won)
+            //{
+            //    Console.WriteLine("You Won!");
+            //}
+
+            //Console.ReadLine();
+
+        }
 
         private static TicTacToeGame g = new TicTacToeGame();
-        static void Main(string[] args)
+        static void TicTacToeGameStarter()
         {
             Console.WriteLine(GetPrintableState());
 
@@ -56,7 +116,6 @@ namespace D_OOP
                 return index.ToString();
             return state == State.Cross ? "X" : "O";
         }
-
 
         static void MyStack()
         {

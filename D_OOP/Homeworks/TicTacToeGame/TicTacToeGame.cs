@@ -6,21 +6,6 @@ using System.Threading.Tasks;
 
 namespace D_OOP.Homeworks.TicTacToeGame
 {
-    public enum Winner
-    {
-        Crosses,
-        Zeroes,
-        Draw,
-        GameIsUnfinished
-    }
-
-    public enum State
-    {
-        Cross,
-        Zero,
-        Unset
-    }
-
     internal class TicTacToeGame
     {
         private readonly State[] board = new State[9];
