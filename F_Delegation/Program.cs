@@ -1,5 +1,8 @@
 ﻿using System.Timers;
+using F_Delegation.Sticks;
 using Timer = System.Timers.Timer;
+using F_Delegation.Sticks;
+using System.Numerics;
 
 namespace F_Delegation
 {
@@ -61,8 +64,54 @@ namespace F_Delegation
 
     class Program
     {
-
         static void Main(string[] args)
+        {
+            var game = new SticksGame(10, Player.Human);
+            game.MachinePlayed += Game_MachinePlayed;
+            game.HumanTurnToMakeMove += Game_MachineTurnToMakeMove;
+            game.EndOfGame += Game_EndOfGame;
+
+            game.Start();
+        }
+
+        private static void Game_EndOfGame(Player player)
+        {
+            Console.WriteLine($"Winner: {player}");
+        }
+
+        private static void Game_MachineTurnToMakeMove(object? sender, int remaningSticks)
+        {
+            Console.WriteLine($"Remaining sticks: {remaningSticks}");
+            Console.WriteLine("Take some sticks");
+
+            bool takenCorrectly = false;
+            while (!takenCorrectly)
+            {
+                if (int.TryParse(Console.ReadLine(), out int takenSticks))
+                {
+                    var game = (SticksGame)sender;
+
+                    try
+                    {
+                        game.HumanTakes(takenSticks);
+                        takenCorrectly = true;
+                    }
+                    catch(ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+
+        }
+
+        private static void Game_MachinePlayed(int sticksTaken)
+        {
+            Console.WriteLine($"Machine took: {sticksTaken}");
+        }
+
+
+        static void EV()
         {
             Timer timer = new Timer();
             timer.Elapsed += Timer_Elapsed;
